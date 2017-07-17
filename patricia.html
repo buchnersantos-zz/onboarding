@@ -14,11 +14,10 @@
   <body>
   	<h1 class="patricia" id="first-event">CLICK ME</h1>
 
-    <h2 id="attribute" onClick="setAttribute()">CLICK ME to set an attribute</h2>
+    <button id="attribute" onClick="setAttribute()">CLICK ME to set an attribute</button>
     <h3 id="second-click"> CLICK ME AFTER! </h3>
     <script>
-    var setAttribute = function(){
-      
+    function setAttribute(){
       window["optimizely"].push({
         "type": "user",
         "attributes": {
