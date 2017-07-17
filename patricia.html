@@ -14,17 +14,23 @@
   <body>
   	<h1 class="patricia" id="first-event">CLICK ME</h1>
 
-    <button id="attribute" onClick="setAttribute()">CLICK ME to set an attribute</button>
+    <button id="attribute">CLICK ME to set an attribute</button>
+    
     <h3 id="second-click"> CLICK ME AFTER! </h3>
+
     <script>
-    function setAttribute(){
-      window["optimizely"].push({
-        "type": "user",
-        "attributes": {
-          "sale": "pay now"
+      $(document).ready(function() {
+        var $ = window.jQuery;
+        $(document).on('click', '#attribute', function(){
+          window["optimizely"] = window["optimizely"] || [];
+          window["optimizely"].push({
+              "type": "user",
+              "attributes": {
+                "sale": "pay now"
+              }
+          });
         }
-      });
-    }
+      }
     </script>
   </body>
 </html>
