@@ -12,9 +12,20 @@
     </style>
   </head>
   <body>
-	<h1 class="patricia">CLICK ME</h1>
-  <!-- <h2>H2 EVENT</h2> -->
-  <!-- <h2 class="headline">Headline</h2> -->
+  	<h1 class="patricia" id="first-event">CLICK ME</h1>
 
+    <h2 id="attribute" onClick="setAttribute()">CLICK ME to set an attribute</h2>
+    <h3 id="second-click"> CLICK ME AFTER! </h3>
+    <script>
+    var setAttribute = function(){
+      
+      window["optimizely"].push({
+        "type": "user",
+        "attributes": {
+          "sale": "pay now"
+        }
+      });
+    }
+    </script>
   </body>
 </html>
