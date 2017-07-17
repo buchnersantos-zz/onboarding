@@ -14,21 +14,8 @@
   <body>
   	<h1 class="patricia" id="first-event">CLICK ME</h1>
 
-    <button id="attribute" onClick="myFunction()">CLICK ME to set an attribute</button>
 
     <h3 id="second-click"> CLICK ME AFTER! </h3>
 
-    <script>
-
-      function myFunction() {
-        window["optimizely"].push({
-            "type": "user",
-            "attributes": {
-              sale: "pay now"
-            }
-        });
-      }
-
-    </script>
   </body>
 </html>
