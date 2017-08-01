@@ -8,17 +8,16 @@
     <title>title</title>
 
     <script>
-      /*
-        var datafile = {"groups": [], "projectId": "8515863675", "experiments": [{"status": "Running", "audienceIds": [], "variations": [{"id": "8519594779", "key": "original"}, {"id": "8528146791", "key": "variation"}], "id": "8528993487", "key": "demo_experiment", "layerId": "8516767337", "trafficAllocation": [{"entityId": "8528146791", "endOfRange": 5000}, {"entityId": "8519594779", "endOfRange": 10000}], "forcedVariations": {}}], "audiences": [], "version": "2", "attributes": [], "accountId": "2779270234", "events": [{"experimentIds": ["8528993487"], "id": "8529040925", "key": "myEvent"}], "revision": "4"}
+      var datafile = '{"groups": [], "projectId": "8515863675", "experiments": [{"status": "Running", "audienceIds": [], "variations": [{"id": "8519594779", "key": "original"}, {"id": "8528146791", "key": "variation"}], "id": "8528993487", "key": "demo_experiment", "layerId": "8516767337", "trafficAllocation": [{"entityId": "8528146791", "endOfRange": 5000}, {"entityId": "8519594779", "endOfRange": 10000}], "forcedVariations": {}}], "audiences": [], "version": "2", "attributes": [], "accountId": "2779270234", "events": [{"experimentIds": ["8528993487"], "id": "8529040925", "key": "myEvent"}], "revision": "4"}'
 
       var optimizely = optimizelyClient.createInstance({
-        datafile : datafile
+        datafile : JSON.parse(stringDatafile)
       })
-      // var datafile = JSON.parse(stringDatafile)
 
       //Activate experiment -> returns current variation
       var curUserVar = optimizely.activate("demo_experiment", "john_hammond");
-    */
+      optimizely.track("myEvent", "john_hammond");
+
     </script>
 
 
