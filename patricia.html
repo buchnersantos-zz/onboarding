@@ -2,6 +2,20 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <script>
+    window["optimizely"] = window["optimizely"] || [] ;
+    window["optimizely"].push({
+      "type": "bucketVisitor",
+      "experimentId": "8541686732",
+      "variationIndex": 0
+    });
+    window["optimizely"].push({
+      type: "event",
+      eventName: "another"
+    });
+    </script>
+
+
     <script src="https://cdn.optimizely.com/js/8265020613.js"></script>
 
     <title>title</title>
